@@ -1,6 +1,5 @@
 #include QMK_KEYBOARD_H
 #include "bootloader.h"
-#include <string.h>
 #ifdef PROTOCOL_LUFA
 #include "lufa.h"
 #include "split_util.h"
@@ -11,6 +10,7 @@
 #ifdef SSD1306OLED
   #include "ssd1306.h"
 #endif
+
 
 #ifdef RGBLIGHT_ENABLE
 //Following line allows macro to read current RGB settings
@@ -53,8 +53,6 @@ enum macro_keycodes {
 #define M_SAMPLE M(KC_SAMPLEMACRO)
 
 #if MATRIX_ROWS == 10 // HELIX_ROWS == 5
-
-const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 #ifdef AUDIO_ENABLE
 
 float tone_qwerty[][2]     = SONG(QWERTY_SOUND);
